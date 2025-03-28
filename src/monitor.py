@@ -22,7 +22,7 @@ async def monitor_subreddits():
                             await download_and_send_video(post)
                 
                 # Add a delay before the next iteration
-                await asyncio.sleep(300) 
+                await asyncio.sleep(5) 
 
             except Exception as e:
                 print(f"⚠️ Error: {e}")
