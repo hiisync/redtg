@@ -15,15 +15,16 @@ async def monitor_subreddits():
     ) as reddit:
         while True:
             try:
+                # Стартуємо моніторинг для кожного з субредітів
                 for subreddit_name in SUBREDDITS_TO_MONITOR:
                     subreddit = await reddit.subreddit(subreddit_name)
-                    async for post in subreddit.hot(limit=10):
+                    
+                    # Використовуємо стрімінг для отримання нових постів
+                    async for post in subreddit.stream.submissions():
                         if post.is_video and not is_post_downloaded(post.id):
                             await download_and_send_video(post)
-                
-                # Add a delay before the next iteration
-                await asyncio.sleep(5) 
-
+            
             except Exception as e:
                 print(f"⚠️ Error: {e}")
-                await asyncio.sleep(10)
+                await asyncio.sleep(10)  # Sleep before retrying
+
