@@ -1,0 +1,5 @@
+aiogram==3.19
+asyncpraw==7.8.1
+python-dotenv==1.1.0
+yt-dlp=2025.3.27
+ffmpeg=1.4
