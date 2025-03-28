@@ -20,6 +20,10 @@ async def monitor_subreddits():
                     async for post in subreddit.hot(limit=10):
                         if post.is_video and not is_post_downloaded(post.id):
                             await download_and_send_video(post)
+                
+                # Add a delay before the next iteration
+                await asyncio.sleep(300) 
+
             except Exception as e:
                 print(f"⚠️ Error: {e}")
                 await asyncio.sleep(10)
