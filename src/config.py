@@ -13,4 +13,4 @@ TELEGRAM_API_TOKEN = os.getenv("TELEGRAM_API_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 
 DB_FILE = "downloaded_posts.db"
-SUBREDDITS_TO_MONITOR = ["funny", "memes"]
+SUBREDDITS_TO_MONITOR = ["funny", "memes", "FunnyAnimals", "funnyvideos", "MadeMeSmile", "oddlysatisfying", "HumansBeingBros", "nextfuckinglevel"]

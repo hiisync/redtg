@@ -48,9 +48,9 @@ async def download_and_send_video(post):
     print(f"📌 New video: {post.title}")
 
     reddit_url = f"https://www.reddit.com{post.permalink}"
-    video_output = f"{post.id}_video.mp4"
-    audio_output = f"{post.id}_audio.mp4"
-    final_output = f"{post.id}.mp4"
+    video_output = f"videos/{post.id}_video.mp4"
+    audio_output = f"videos/{post.id}_audio.mp4"
+    final_output = f"videos/{post.id}.mp4"
 
     try:
         # Attempt to download video and audio
